@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>GENDER BASED VIOLENCE</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+  <img alt='logo' class='logoImg' href="{{ url_for('static', filename='img.jpg') }}" />
+    </div>
+  </nav>
+
+
+    <div>
+        <div class="header">
+            <br><br>
+            <h1 >Prediction</h1>
+            <h5>Predict the probability of being victimized</h5>
+        </div>
+        
+        <br><br> <br><br>
+    </div>
+    <br>  <br>
+    <div>
+        <form action='/predict' methods='POST' >
+            <table class='table' align="center">
+                <tr>
+                    <th>
+                        <label ><b>Age</b></label>
+                        <br>
+                        <input type="text" name="age" placeholder="age" required="required" title ="Individual age"  />
+                    </th>
+                    <th>
+
+                    <label ><b>Race </b></label>
+                        <br>
+                        <input type="text" name="race" placeholder=" race" required="required" title="Individual race" />
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>Dwelling</b></label>
+                        <br>
+                        <input type="text" name="dwelling" placeholder="dwelling" required="required" title="The dwelling/house the person occupies" />
+
+
+                    </th>
+                    <th>
+                        <label ><b>Dwelling_type</b></label>
+                        <br>
+                        <input type="text" name="dwelling_type" placeholder="dwelling_type" required="required" title="Is the dwelling formal or informal(Yes-formal, No-Informal)"/>
+
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>Province_code</b></label>
+                        <br>
+                        <input type="text" name="province_code" placeholder="province_code" required="required" title="province_code" />
+
+
+                    </th>
+                    
+
+                    <th>
+                        <label ><b>Metro_code</b></label>
+                        <br>
+                        <input type="text" name="metro_code" placeholder="metro_code" required="required" title="metro_code" />
+
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>Individual Nationality</b></label>
+                        <br>
+                        <input type="text" name="Nationality" placeholder="Nationality" required="required" title="Individual Nationality"/>
+
+
+                    </th>
+                
+                    <th>
+                        <label ><b>RTH</b></label>
+                        <br>
+                    
+                        <input type="text" name="RTH" placeholder="RTH" required="required" title="Individual Relationship to the head of the household" />
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>Marital_st</b></label>
+                        <br>
+                        <input type="text" name="Marital_st" placeholder="Marital_st" required="required" title="Marital status" />
+
+
+                    </th>
+                    <th>
+                        <label ><b>Lang_inside</b></label>
+                        <br>
+                        <input type="text" name="Lang_inside" placeholder="Lang_inside" required="required" title="The main language the person speaks in the house" />
+
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>Lang_outside</b></label>
+                        <br>
+                    
+                        <input type="text" name="Lang_outside" placeholder="Lang_outside" required="required" title="The main language that is spoken outside the house." />
+
+                    </th>
+                    <th>
+                        <label ><b>Education</b></label>
+                        <br>
+                    
+                        <input type="text" name="Education" placeholder="Education" required="required" title ="Education attainment"/>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>lw_work</b></label>
+                        <br>
+                        <input type="text" name="lw_work" placeholder="lw_work" required="required" title="salary/wages/any payment for work done in the last week" />
+
+
+                    </th>
+                    <th>
+                        <label ><b>lw_business</b></label>
+                        <br>
+                        <input type="text" name="lw_business" placeholder="lw_business" required="required" title="Run/do any kind of a business in the last week" />
+
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label ><b>help_on_household</b></label>
+                        <br>
+                    
+                        <input type="text" name="help_on_household" placeholder="help_on_household" required="required" title="Help on household/ business without any pay in the last week" />
+
+                    </th>
+                    <th>
+                        <label ><b>nature_of_work</b></label>
+                        <br>
+                    
+                        <input type="text" name="nature_of_work" placeholder="nature_of_work" required="required" title="The nature of work(permanent, contract, fixed, etc)"/>
+
+                    </th>
+                </tr>
+            </table> 
+               <br>
+               <br>
+            <div>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>      
+                
+          
+            </div>  
+        </form>
+        <br>
+      <br>
+       {{ prediction_text }}
+    </div>
+    
+  
+
+</body>
+</html>
